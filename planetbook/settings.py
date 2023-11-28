@@ -71,6 +71,12 @@ TEMPLATES = [
         },
     },
 ]
+AUTHENTICATION_BACKENDS = [
+    
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+
 
 WSGI_APPLICATION = 'planetbook.wsgi.application'
 
