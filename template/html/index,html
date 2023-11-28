@@ -1,0 +1,10 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Index - PlanetBook{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Index Page</h2>
+    <p>This is the content specific to the index page.</p>
+    <!-- Add more content as needed -->
+{% endblock %}
