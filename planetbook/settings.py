@@ -83,6 +83,11 @@ AUTHENTICATION_BACKENDS = [
 
     
 ]
+STATICFILES_DIRS = [
+    # Add the path to your static folder here
+    os.path.join(BASE_DIR, 'static'),  # Assuming 'static' is a folder in your project's base directory
+]
+
 SITE_ID = 1
 # ACCOUNT_EMAIL_VERIFICATION = 'none'
 
