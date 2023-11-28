@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path, os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,12 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'allauth',
+    'allauth',
     'allauth.account',
     'library',
     'crispy_forms',
     'checkout',
     'pyscript',
+    'allauth.socialaccount', # new
+    'allauth.socialaccount.providers.github', # new
+
+    # custom apps go here...
 ]
 
 MIDDLEWARE = [
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'planetbook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,11 +78,15 @@ TEMPLATES = [
     },
 ]
 AUTHENTICATION_BACKENDS = [
-    
+    "django.contrib.auth.backends.ModelBackend",    
     'allauth.account.auth_backends.AuthenticationBackend',
+
     
 ]
+SITE_ID = 1
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# LOGIN_REDIRECT_URL = 'home'
 
 WSGI_APPLICATION = 'planetbook.wsgi.application'
 
