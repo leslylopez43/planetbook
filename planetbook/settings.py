@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'pyscript',
     'allauth.socialaccount', # new
     'allauth.socialaccount.providers.github', # new
-    'home'
+    'home',
 
     # custom apps go here...
 ]

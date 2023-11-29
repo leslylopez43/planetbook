@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
+
+
     # path('', include('library.urls')),
     # path('', include('checkout.urls')),
     # path('', include('pyscript.urls')),
