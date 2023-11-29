@@ -1,18 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def index (request):
     """ A view to return the index page"""
-    return render (request, './home/index.html')
-# views.py
-from django.shortcuts import render
+    return render (request, 'home/index.html')
 
-
-
-
-@login_required
+"""@login_required
 def admin_dashboard(request):
 # Check if the user is an admin (superuser)
     if not request.user.is_superuser:
@@ -25,5 +20,5 @@ def admin_dashboard(request):
     all_users = User.objects.all()
 
     # Example: Render the admin dashboard template with user data
-    return render(request, 'admin_dashboard.html', {'users': all_users})
+    return render(request, 'admin_dashboard.html', {'users': all_users}) """""""""
  
