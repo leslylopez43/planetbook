@@ -2,10 +2,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Authors List</h2>
+  <h2>Borrow/Return List</h2>
   <ul>
     {% for author in object_list %}
-      <li><a href="{% url 'author-detail' author.pk %}">{{ author.author_name }}</a></li>
+      <li><a href="{% url 'user-list' author.pk %}">{{ author.author_name }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
