@@ -16,16 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', include('home.urls')),
+    path('accounts/admin/', include('allauth.urls'), name='admin_page'),
+    path('/', include('home.urls')),
 
+]+ static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    # path('', include('library.urls')),
-    # path('', include('checkout.urls')),
-    # path('', include('pyscript.urls')),
-]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+# /Users/elenitayroy/Documents/GitHub/planetbook/home/admin.py
+# /Users/elenitayroy/Documents/GitHub/planetbook/home/url.py
