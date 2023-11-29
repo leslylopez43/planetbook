@@ -1,0 +1,11 @@
+<!-- author_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Authors</h2>
+  <ul>
+    {% for author in object_list %}
+      <li><a href="{% url 'author-detail' author.pk %}">{{ author.author_name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

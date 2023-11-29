@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # new
     'allauth.socialaccount.providers.github', # new
     'home',
-    'library',
+
 
     # custom apps go here...
 ]

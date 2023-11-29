@@ -1,0 +1,10 @@
+<!-- author_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ object.author_name }}</h2>
+  <p>Biography: {{ object.biography }}</p>
+  <p>Birth Date: {{ object.birth_date }}</p>
+  <p>Death Date: {{ object.death_date }}</p>
+  <p>Nationality: {{ object.nationality }}</p>
+{% endblock %}
