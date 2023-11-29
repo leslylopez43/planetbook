@@ -88,6 +88,24 @@ AUTHENTICATION_BACKENDS = [
 
     
 ]
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_USERNAME_BLACKLIST = ['admin', 'superuser', 'user', 'username', 'root', 'administrator', 'email', 'join', 'search', 'delete', 'remove', 'add', 'create', 'update', 'change', 'edit', 'manage', 'settings', 'profile', 'password', 'account', 'signup', 'signin', 'signout', 'session', 'oauth', 'openid', 'sms', 'mobile', 'home', 'index', 'css', 'js', 'api', 'rss']
+ACCOUNT_PASSWORD_MIN_LENGTH = 6
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'account_login'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'home'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+ACCOUNT_EMAIL_MAX_LENGTH = 254
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 # 1 day in seconds
+LOGING_URL = '/Accounts/login/'
+LOGING_REDIRECT_URL = '/Accounts/SUCCESS/'
+
+
 STATICFILES_DIRS = [
     # Add the path to your static folder here
     os.path.join(BASE_DIR, 'static'),  # Assuming 'static' is a folder in your project's base directory
